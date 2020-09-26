@@ -15,7 +15,8 @@ int main()
     while (true) {
         cout << "1. Ejercicios" << endl;
         cout << "2. Problemas" << endl;
-        cout << "Por favor seleccione la opcion deseada." << endl;
+        cout << "3. Salir" << endl;
+        cout << "Por favor seleccione la opcion deseada: ";
         cin >> menu;
         switch (menu)
         {
@@ -24,8 +25,20 @@ int main()
             cin >> ejer;
             switch (ejer)
             {
+            /** EJERCICIOS **/
             case 1:
-                /* code */
+                A=0;
+                B=0;
+                cout << "Ingrese el numero A: ";
+                cin >> A;
+                cout << "Ingrese el numero B: ";
+                cin >> B;
+                while (B==0) {
+                    cout << "El denominador ingresado no es válido. Por favor ingrese uno valido." << endl;
+                    cout << "Ingrese el numero B: ";
+                    cin >> B;
+                }
+                cout << endl << "El residuo de la division " << A << "/" << B << " es: " << A%B << endl;
                 break;
 
             default:
@@ -47,6 +60,8 @@ int main()
                 break;
             }
             break;
+        case 3:
+            exit(0);
         default:
             cout << endl << "La opcion seleccionada no existe";
             break;
