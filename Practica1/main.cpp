@@ -41,7 +41,7 @@ int main()
                 cout << endl << "El residuo de la division " << A << "/" << B << " es: " << A%B << endl;
                 break;
             case 2:
-                cout << "Ingrese el numero A: " << endl;
+                cout << "Ingrese el numero A: ";
                 cin >> A;
                 if (A%2==0) {
                     cout << "El numero ingresado " << A << ", es PAR." << endl;
@@ -50,9 +50,9 @@ int main()
                 }
                 break;
             case 3:
-                cout << "Ingrese el numero A: " << endl;
+                cout << "Ingrese el numero A: ";
                 cin >> A;
-                cout << "Ingrese el numero B: " << endl;
+                cout << "Ingrese el numero B: ";
                 cin >> B;
                 if (A > B) {
                     cout << "El numero mayor es " << A << endl;
@@ -61,6 +61,71 @@ int main()
                 } else {
                     cout << "Los numeros son iguales." << endl;
                 }
+                break;
+            case 4:
+                cout << "Ingrese el numero A: ";
+                cin >> A;
+                cout << "Ingrese el numero B: ";
+                cin >> B;
+                if (A < B) {
+                    cout << "El numero menor es " << A << endl;
+                } else if(B < A) {
+                    cout << "El numero menor es " << B << endl;
+                } else {
+                    cout << "Los numeros son iguales." << endl;
+                }
+                break;
+            case 5:
+                break;
+            case 6:
+                break;
+            case 7:
+                break;
+            case 8:
+                break;
+            case 9:
+                break;
+            case 10:
+                break;
+            case 11:
+                break;
+            case 12:
+                break;
+            case 13:
+                break;
+            case 14:
+                break;
+            case 15:
+                break;
+            case 16:
+                break;
+            case 17:
+                break;
+            case 18:
+                break;
+            case 19:
+                break;
+            case 20:
+                break;
+            case 21:
+                break;
+            case 22:
+                break;
+            case 23:
+                break;
+            case 24:
+                break;
+            case 25:
+                break;
+            case 26:
+                break;
+            case 27:
+                break;
+            case 28:
+                break;
+            case 29:
+                break;
+            case 30:
                 break;
             default:
                 cout << endl << "El ejercicio seleccionado no existe";
