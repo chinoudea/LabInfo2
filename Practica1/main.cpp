@@ -34,19 +34,32 @@ int main()
                 cout << "Ingrese el numero B: ";
                 cin >> B;
                 while (B==0) {
-                    cout << "El denominador ingresado no es válido. Por favor ingrese uno valido." << endl;
+                    cout << "El denominador ingresado no es valido. Por favor ingrese uno valido." << endl;
                     cout << "Ingrese el numero B: ";
                     cin >> B;
                 }
                 cout << endl << "El residuo de la division " << A << "/" << B << " es: " << A%B << endl;
                 break;
             case 2:
-                cout << "Ingrese A: " << endl;
+                cout << "Ingrese el numero A: " << endl;
                 cin >> A;
                 if (A%2==0) {
                     cout << "El numero ingresado " << A << ", es PAR." << endl;
                 } else {
                     cout << "El numero ingresado " << A << ", es IMPAR." << endl;
+                }
+                break;
+            case 3:
+                cout << "Ingrese el numero A: " << endl;
+                cin >> A;
+                cout << "Ingrese el numero B: " << endl;
+                cin >> B;
+                if (A > B) {
+                    cout << "El numero mayor es " << A << endl;
+                } else if(B > A) {
+                    cout << "El numero mayor es " << B << endl;
+                } else {
+                    cout << "Los numeros son iguales." << endl;
                 }
                 break;
             default:
