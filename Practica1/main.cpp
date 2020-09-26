@@ -40,7 +40,15 @@ int main()
                 }
                 cout << endl << "El residuo de la division " << A << "/" << B << " es: " << A%B << endl;
                 break;
-
+            case 2:
+                cout << "Ingrese A: " << endl;
+                cin >> A;
+                if (A%2==0) {
+                    cout << "El numero ingresado " << A << ", es PAR." << endl;
+                } else {
+                    cout << "El numero ingresado " << A << ", es IMPAR." << endl;
+                }
+                break;
             default:
                 cout << endl << "El ejercicio seleccionado no existe";
                 break;
