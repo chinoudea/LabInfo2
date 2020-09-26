@@ -102,6 +102,18 @@ int main()
                 cout << A << "^" << B << "=" << F << endl;
                 break;
             case 7:
+                B=0;
+                cout << "Ingrese el numero A: ";
+                cin >> A;
+                while (A<0) {
+                    cout << "Por favor ingrese un numero positivo" << endl;
+                    cout << "Ingrese el numero A: ";
+                    cin >> A;
+                }
+                for (int n=0; n<=A; n++) {
+                    B += n;
+                }
+                cout << "La sumatoria desde 0 hasta " << A << " es: " << B << endl;
                 break;
             case 8:
                 break;
