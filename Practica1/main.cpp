@@ -76,6 +76,11 @@ int main()
                 }
                 break;
             case 5:
+                cout << "Ingrese el numero A: ";
+                cin >> A;
+                cout << "Ingrese el numero B: ";
+                cin >> B;
+                cout << A << "/" << B << "=" << A/B;
                 break;
             case 6:
                 break;
