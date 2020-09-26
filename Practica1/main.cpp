@@ -11,8 +11,10 @@ using namespace std;
 int main()
 {
     int menu, ejer, prob;
-    int A=0, B=0, C=0;
+    int A=0, B=0, C=0, D=0;
+    float F=0.0;
     while (true) {
+        cout << endl;
         cout << "1. Ejercicios" << endl;
         cout << "2. Problemas" << endl;
         cout << "3. Salir" << endl;
@@ -27,8 +29,6 @@ int main()
             {
             /** EJERCICIOS **/
             case 1:
-                A=0;
-                B=0;
                 cout << "Ingrese el numero A: ";
                 cin >> A;
                 cout << "Ingrese el numero B: ";
@@ -80,9 +80,26 @@ int main()
                 cin >> A;
                 cout << "Ingrese el numero B: ";
                 cin >> B;
+                while (B==0) {
+                    cout << "El denominador ingresado no es valido. Por favor ingrese uno valido." << endl;
+                    cout << "Ingrese el numero B: ";
+                    cin >> B;
+                }
                 cout << A << "/" << B << "=" << A/B;
                 break;
             case 6:
+                F = 1.0;
+                cout << "Ingrese el numero A: ";
+                cin >> A;
+                cout << "Ingrese el numero B: ";
+                cin >> B;
+                C=B;
+                if (C<0) C=C*-1;
+                for (int n=1;n<=C;n++){
+                    F *= A;
+                }
+                if (B<0) F=1/F;
+                cout << A << "^" << B << "=" << F << endl;
                 break;
             case 7:
                 break;
