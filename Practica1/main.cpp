@@ -13,6 +13,7 @@ int main()
     int menu, ejer, prob;
     int A=0, B=0, C=0, D=0;
     float F=0.0;
+    double PI=3.1416;
     while (true) {
         cout << endl;
         cout << "1. Ejercicios" << endl;
@@ -116,12 +117,41 @@ int main()
                 cout << "La sumatoria desde 0 hasta " << A << " es: " << B << endl;
                 break;
             case 8:
+                B=1;
+                cout << "Ingrese un numero A positivo: ";
+                cin >> A;
+                while (A<0) {
+                    cout << "Por favor ingrese un numero positivo" << endl;
+                    cout << "Ingrese el numero A: ";
+                    cin >> A;
+                }
+                for (int n=1; n<=A; n++) {
+                    B *= n;
+                }
+                cout << A << "!= " << B << endl;
                 break;
-            case 9:
+            case 9:                                
+                cout << "Ingrese el radio: ";
+                cin >> A;
+                cout << "Perimetro: " << 2*PI*A << endl;
+                cout << "Area: " << PI * (A*A) << endl;
                 break;
             case 10:
+                cout << "Ingrese A: ";
+                cin >> A;
+                cout << "Multiplos de " << A << "menores de 100:" << endl;
+                for (int n=1;n<=100;n++) {
+                    if (A*n < 100) {
+                        cout << A*n << endl;
+                    }
+                }
                 break;
             case 11:
+                cout << "Ingrese A: ";
+                cin >> A;
+                for (int n=1; n<=10; n++) {
+                    cout << n << "x" << A << "=" << n*A << endl;
+                }
                 break;
             case 12:
                 break;
