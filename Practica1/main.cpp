@@ -12,8 +12,9 @@ int main()
 {
     int menu, ejer, prob;
     int A=0, B=0, C=0, D=0, E=0;
-    float F=0.0;
-    double G=3.1416;
+    float F=0.0, G=0.0;
+    double H=3.1416;
+    char I;
     while (true) {
         cout << endl;
         cout << "1. Ejercicios" << endl;
@@ -133,8 +134,8 @@ int main()
             case 9:                                
                 cout << "Ingrese el radio: ";
                 cin >> A;
-                cout << "Perimetro: " << 2*G*A << endl;
-                cout << "Area: " << G * (A*A) << endl;
+                cout << "Perimetro: " << 2*H*A << endl;
+                cout << "Area: " << H * (A*A) << endl;
                 break;
             case 10:
                 cout << "Ingrese A: ";
@@ -330,14 +331,98 @@ int main()
                 cout << A << " tiene " << B << " digitos." << endl;
                 break;
             case 26:
+                cout << "Ingrese valor de lado A: ";
+                cin >> A;
+                cout << "Ingrese valor de lado B: ";
+                cin >> B;
+                cout << "Ingrese valor de lado C: ";
+                cin >> C;
+                if (A==B && A==C && B==C) {
+                    cout << "Se forma un triangulo equilatero." << endl;
+                } else {
+                        D=max(A,B);
+                        if (A>B) D=A;
+                        else D=B;
+                        if (C>D) D=C;
+                        if (((A==D) && (B+C<=A)) || ((B==D) && (A+C<=B)) || ((C==D) && (A+B<=C))) {
+                            cout << "Las longitudes ingresadas no forman un triangulo." << endl;
+                        } else if (A==B || A==C || B==C) {
+                            cout << "Se forma un triangulo isosceles." << endl;
+                        } else {
+                            cout << "Se forma un triangulo escaleno." << endl;
+                        }
+                }
                 break;
             case 27:
+                cout << "Ingrese numero A: ";
+                cin >> A;
+                cout << "Ingrese un operando (+,-,*,/): ";
+                cin >> I;
+                cout << "Ingrese numero B: ";
+                cin >> B;
+                C = I;
+                if (C==43) {
+                    cout << A << "+" << B << "=" << A+B << endl;
+                } else if (C==45) {
+                    cout << A << "-" << B << "=" << A-B << endl;
+                } else if (C==42) {
+                    cout << A << "*" << B << "=" << A*B << endl;
+                } else if (C==47) {
+                    cout << A << "/" << B << "=" << A/B << endl;
+                } else {
+                    cout << "El operando ingresado no es valido." << endl;
+                }
                 break;
-            case 28:
+            case 28:                
+                F = 4.0;
+                G = 0.0;
+                B = 1;
+                cout << "Ingrese el numero de elementos: ";
+                cin >> A;
+                for (float n=3;n<A*2;n+=2) {
+                   B*=-1;
+                   G=(4/n)*B;
+                   F+=G;
+                }
+                cout << "pi es aproximadamente: " << F << endl;
                 break;
             case 29:
+                B=0;
+                C=101;
+                char I;
+                srand(time_t(NULL));
+                do {
+                    E = C - B;
+                    A = rand() % E + B;
+                    cout << "El numero que pensaste es: " << A << " ? (<,>,=)" << endl;
+                    cin >> I;
+                    D = I;
+                    if (D==62) {
+                        B = A+1;
+                    } else if (D == 60) {
+                        C = A;
+                    }
+                    if (C-B==1) {
+                        cout << "Tu numero es " << B << endl;
+                        break;
+                    }
+                } while (D!=61);
                 break;
             case 30:
+                C=0;
+                srand(time_t(NULL));
+                A = rand() % 101;
+                do {
+                    cout << "Adivina el numero que tengo en memoria: ";
+                    cin >> B;
+                    C++;
+                    if (B>A) {
+                        cout << "El numero que ingresaste es mayor al que tengo en memoria." << endl;
+                    } else if (B<A) {
+                        cout << "El numero que ingresaste es menor al que tengo en memoria." << endl;
+                    }
+                } while (A!=B);
+                cout << "Adivinaste!! en " << C << " intentos." << endl;
                 break;
             default:
                 cout << endl << "El ejercicio seleccionado no existe";
