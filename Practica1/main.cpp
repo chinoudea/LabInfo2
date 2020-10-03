@@ -11,9 +11,9 @@ using namespace std;
 int main()
 {
     int menu, ejer, prob;
-    int A=0, B=0, C=0, D=0;
+    int A=0, B=0, C=0, D=0, E=0;
     float F=0.0;
-    double PI=3.1416;
+    double G=3.1416;
     while (true) {
         cout << endl;
         cout << "1. Ejercicios" << endl;
@@ -96,7 +96,7 @@ int main()
                 cin >> B;
                 C=B;
                 if (C<0) C=C*-1;
-                for (int n=1;n<=C;n++){
+                for (D=1;D<=C;D++){
                     F *= A;
                 }
                 if (B<0) F=1/F;
@@ -111,8 +111,8 @@ int main()
                     cout << "Ingrese el numero A: ";
                     cin >> A;
                 }
-                for (int n=0; n<=A; n++) {
-                    B += n;
+                for (C=0; C<=A; C++) {
+                    B += C;
                 }
                 cout << "La sumatoria desde 0 hasta " << A << " es: " << B << endl;
                 break;
@@ -125,61 +125,209 @@ int main()
                     cout << "Ingrese el numero A: ";
                     cin >> A;
                 }
-                for (int n=1; n<=A; n++) {
-                    B *= n;
+                for (C=1; C<=A; C++) {
+                    B *= C;
                 }
                 cout << A << "!= " << B << endl;
                 break;
             case 9:                                
                 cout << "Ingrese el radio: ";
                 cin >> A;
-                cout << "Perimetro: " << 2*PI*A << endl;
-                cout << "Area: " << PI * (A*A) << endl;
+                cout << "Perimetro: " << 2*G*A << endl;
+                cout << "Area: " << G * (A*A) << endl;
                 break;
             case 10:
                 cout << "Ingrese A: ";
                 cin >> A;
                 cout << "Multiplos de " << A << "menores de 100:" << endl;
-                for (int n=1;n<=100;n++) {
-                    if (A*n < 100) {
-                        cout << A*n << endl;
+                for (B=1;B<=100;B++) {
+                    if (A*B < 100) {
+                        cout << A*B << endl;
                     }
                 }
                 break;
             case 11:
                 cout << "Ingrese A: ";
                 cin >> A;
-                for (int n=1; n<=10; n++) {
-                    cout << n << "x" << A << "=" << n*A << endl;
+                for (B=1; B<=10; B++) {
+                    cout << B << "x" << A << "=" << B*A << endl;
                 }
                 break;
             case 12:
+                D=1;
+                cout << "Ingrese A: ";
+                cin >> A;
+                for (B=1;B<=5;B++) {
+                    for (C=1; C<=B; C++) {
+                        D*=A;
+                    }
+                    cout << A << "^" << B << "=" << D << endl;
+                    D=1;
+                }
                 break;
             case 13:
+                cout << "Ingrese A: ";
+                cin >> A;
+                cout << "Los divisores de " << A <<" son: " << endl;
+                for (B=1;B<=A;B++) {
+                    if (A%B == 0) {
+                        cout << B << endl;
+                    }
+                }
                 break;
             case 14:
+                A=51;
+                for (B=1;B<=50;B++) {
+                    cout << B << '\t' << A-B << endl;
+                }
                 break;
-            case 15:
+            case 15:                
+                B=0;
+                do {
+                    cout << "Ingrese un numero: ";
+                    cin >> A;
+                    B += A;
+                } while (A!=0);
+                cout << "El resultado de la sumatoria es: " << B << endl;
                 break;
             case 16:
+                B=0;
+                C=0;
+                do {
+                    cout << "Ingrese un numero: ";
+                    cin >> A;
+                    B += A;
+                    C++;
+                } while (A!=0);
+                cout << "El promedio es: " << B/(C-1) << endl;
                 break;
             case 17:
+                B=0;
+                do {
+                    cout << "Ingrese un numero: ";
+                    cin >> A;
+                    if (A > B) {
+                        B = A;
+                    }
+                } while (A!=0);
+                cout << "El numero mayor fue: " << B << endl;
                 break;
-            case 18:
+            case 18:                                
+                cout << "Ingrese un numero entero: ";
+                cin >> A;
+                for (B=1; B<=(A/2); B++) {
+                    if ((B*B) == A) {
+                        cout << A << " es un cuadrado perfecto." << endl;
+                        break;
+                    }
+                }
+                if ((B >= (A/2)) && (A > 1)) {
+                    cout << A << " NO es un cuadrado perfecto." << endl;
+                }
                 break;
             case 19:
+                B = 0;
+                cout << "Ingrese un numero: ";
+                cin >> A;
+                for(int n=1;n<=A;n++) {
+                    if(A % n == 0){
+                        B++;
+                    }
+                }
+                if(B == 2){
+                    cout << A << " es un numero PRIMO." << endl;
+                }else{
+                    cout<< A <<" NO es un numero PRIMO." << endl;
+                }
                 break;
             case 20:
+                D=0;
+                cout << "Ingrese un numero: ";
+                cin >> A;
+                C = A;
+                do {
+                    B = C%10;
+                    C /= 10;
+                    D*=10;
+                    D+=B;
+                } while (C != 0);
+                if (D==A) {
+                    cout << A << " es un numero palindromo.";
+                } else {
+                    cout << A << " NO es un numero palindromo.";
+                }
                 break;
-            case 21:
+            case 21:                
+                char r;
+                cout << "Ingrese un caracter: ";
+                cin >> r;
+                A=r;
+                if (A>=65 && A<=90) {
+                    A+=32;
+                    r = char(A);
+                    cout << r << endl;
+                } else if (A>=97 && A<=122) {
+                    A-=32;
+                    r = char(A);
+                    cout << r << endl;
+                } else {
+                    cout << "El caracter ingresado no es una letra.";
+                }
                 break;
-            case 22:
+            case 22:                
+                cout << "Ingrese el valor en segundos: ";
+                cin >> A;
+                B=A/3600;
+                C=A%3600;
+                D=C%60;
+                C=C/60;
+                cout << B << ":" << C << ":" << D << endl;
                 break;
-            case 23:
+            case 23:                
+                cout << "Ingrese el numero A: ";
+                cin >> A;
+                cout << "Ingrese el numero B: ";
+                cin >> B;
+                E = A*B;
+                int minimo;
+                if (A<B) minimo = A;
+                else if (B<A) minimo = B;
+                else minimo = B;
+                for (int n=A*B;n>=minimo;n--) {
+                    C=n%A;
+                    D=n%B;
+                    if (C==0 && D==0) {
+                        E = n;
+                    }
+                }
+                cout<<"El MCM de "<<A<<" y "<<B<<" es: "<<E<<endl;
                 break;
             case 24:
+                cout << "Ingrese el numero A: ";
+                cin >> A;
+                for (B=1;B<=A;B++) {
+                    for (C=1;C<=A;C++) {
+                        if (B==1 || B==A) {
+                            cout << "+";
+                        } else if (C==1 || C==A) {
+                            cout << "+";
+                        } else {
+                            cout << " ";
+                        }
+                    }
+                    cout << endl;
+                }
                 break;
             case 25:
+                B=0;
+                cout << "Ingrese un numero: ";
+                cin >> A;
+                C = A;
+                do {
+                    C /= 10;
+                    B++;
+                } while (C != 0);
+                cout << A << " tiene " << B << " digitos." << endl;
                 break;
             case 26:
                 break;
