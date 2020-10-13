@@ -4,4 +4,8 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
+        lab.cpp \
         main.cpp
+
+HEADERS += \
+    lab.h
