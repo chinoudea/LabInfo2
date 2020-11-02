@@ -1,0 +1,8 @@
+H E 18
+A G 3
+A C 89
+G D 100
+B H 26
+A C 78
+B G 7
+B E 98
